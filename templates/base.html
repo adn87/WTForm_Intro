@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <style>
-    {% block styling %}
-    body{
-        background: purple;
-    }
-    {% endblock %}
+        {{ bootstrap.load_css() }}
     </style>
 </head>
 <body>
