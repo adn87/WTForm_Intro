@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, PasswordField, SubmitField
 
 '''
 Red underlines? Install the required packages first: 
@@ -20,8 +20,9 @@ app.secret_key = "this-is-my-secret-key"
 
 
 class MyForm(FlaskForm):
-    email = StringField('Email')
-    password = StringField('Password')
+    email = StringField(label='Email')
+    password = PasswordField(label='Password')
+    submit = SubmitField(label="Log in")
 
 
 @app.route("/")
